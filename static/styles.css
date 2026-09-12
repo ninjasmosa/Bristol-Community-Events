@@ -1,0 +1,46 @@
+nav {
+    padding: 0 20px;
+}
+
+.grid > div {
+    padding: 10px;
+    border: 1px solid lightgray;;
+}
+
+.longtext {
+    max-width: 800px;
+    padding: 10px;
+}
+
+header {
+    padding: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    border-top: 1px solid lightgray;
+}
+
+footer > a {
+    margin: 0 15px;
+}
+
+aside {
+    padding: 10px;
+    border-radius: 10px;
+}
+
+aside > form, p {
+    padding: 0px 10px;
+}
+
+#navbar-title {
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#filter-events {
+    border-bottom: 1px solid lightgray;
+    padding: 10px
+}

@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %}
+Account Settings - Bristol Community Events
+{% endblock %}
+{% block header %}
+<header>
+        <h1>Account Settings</h1>
+</header>
+{% endblock %}
+{% block content %}
+    <section class="container">
+        <h2>Personal Information</h2>
+        <form action="/account/update-name" method="post">
+            <label for="fname">First name:</label>
+            <input type="text" name="fname" id="fname" value="{{user[0]}}">
+            <label for="lname">Last name:</label>
+            <input type="text" name="lname" id="lname" value="{{user[1]}}">
+            <input type="submit" value="Update Name">
+        </form>
+        <form action="/account/update-email" method="post">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" value="{{user[2]}}">
+            <input type="submit" value="Update Email">
+        </form>
+        <form action="/account/update-type" method="post">
+            <label for="user-type">Customer Type:</label>
+            <select name="user_type" id="user-type">
+                <option value="Standard" {% if user[4] == "Standard" %}selected{% endif %}>Standard</option>
+                <option value="Student" {% if user[4] == "Student" %}selected{% endif %}>Student</option>
+            </select>
+            <input type="submit" value="Update Customer Type">
+        </form>
+        <form action="/account/update-password" method="post">
+            <label for="current-password">Current password:</label>
+            <input type="password" name="current_password" id="current-password">
+            <label for="new-password">New password:</label>
+            <input type="password" name="new_password" id="new-password">
+            <input type="submit" value="Update Password">
+        </form>
+        <div class="grid">
+            <a href="/account/bookings">My bookings</a>
+        </div>
+        <br>
+        <button type="button" onclick="location.href='/account/delete-account'">Delete Account</button>
+        <br>
+        <button type="button" onclick="location.href='/account/logout'">Log out</button>
+    </section>
+{% endblock %}

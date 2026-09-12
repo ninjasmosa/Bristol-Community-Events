@@ -1,0 +1,37 @@
+{% extends "/base.html" %}
+{% block title %}
+Manage venues - Bristol Community Events
+{% endblock %}
+{% block content %}
+<section class="container-fluid">
+<a href="/admin/settings">Go back</a>
+<br>
+<a href="/admin/all_venues">View all venues</a>
+<br>
+<h2>Add venue</h2>
+<form action="/admin/add_venue" method="post">
+    <label for="venue-name">Venue name:</label>
+    <input type="text" name="venue_name" id="venue-name" required>
+    <label for="venue-capacity">Venue capacity:</label>
+    <input type="number" name="venue_capacity" id="venue-capacity" required>
+    <label for="venue-suitability">Venue suitability:</label>
+    <textarea name="venue_suitability" id="venue-suitability"></textarea>
+    <button type="submit">Add venue</button>
+</form>
+<h2>Edit venue</h2>
+<form action="/admin/edit_venue" method="post">
+    <label for="edit-venue-name">Venue name:</label>
+    <input type="text" name="venue_name" id="edit-venue-name">
+    <label for="edit-venue-capacity">Venue capacity:</label>
+    <input type="number" name="venue_capacity" id="edit-venue-capacity">
+    <label for="edit-venue-suitability">Venue suitability:</label>
+    <textarea name="venue_suitability" id="edit-venue-suitability"></textarea>
+    <button type="submit">Edit venue</button>
+</form>
+<h2>Delete venue</h2>
+<form action="/admin/delete_venue" method="post">
+    <label for="delete-venue-name">Name of the venue to delete:</label>
+    <input type="text" name="venue_name" id="delete-venue-name" required>
+    <button type="submit">Delete venue</button>
+</form>
+{% endblock %}

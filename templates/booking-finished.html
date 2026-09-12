@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}
+Booking Confirmation - Bristol Community Events
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Booking Confirmation</h1>
+    <p>Thank you for your booking!</p>
+    <p>Event: {{ event_id }}</p>
+    <p>Event name: {{ event_name }}</p>
+    <p>User Email: {{ user_email }}</p>
+    <p>Price: £{{ price }}</p>
+    <p>Quantity: {{ quantity }}</p>
+    {% if session['user-type'] == 'Student' %}
+    <p>As your account is registered as a student, a 10% discount has been applied. Please show your student ID when you attend the event.</p>
+{% endif %}
+</div>
+<br>
+
+{% endblock %}

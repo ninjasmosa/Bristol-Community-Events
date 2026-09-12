@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+    {% block title %}
+        <title>Contact - Bristol Community Events</title>
+    {% endblock %}
+    {% block header %}
+    <header>
+        <h1>Contact us</h1>
+        <p>If you have any questions, suggestions, or would like to get in touch with us, please fill out the form below:</p>
+    </header>
+    {% endblock %}
+    {% block content %}
+    <form action="" method="post" class="container">
+        <label for="fname">First name:</label>
+        <input type="text" id="fname" name="fname" required>
+        <label for="fname">Last name:</label>
+        <input type="text" id="lname" name="lname" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>     
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" cols="50" required></textarea>      
+        <input type="checkbox" id="privacy-consent" name="privacy-consent" required>
+        <label for="privacy-consent">I agree to the <a href="/pages/privacy.html">Privacy Statement</a>.</label><br>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+    <br>
+    <p>You can also send an email to <a href="mailto:contact@bristolcommunityevents.org.uk">contact@bristolcommunityevents.org.uk</a></p>
+    {% endblock %}

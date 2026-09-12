@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='pico.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    {% block nav %}
+    <nav>
+        <ul>
+            <li><a href="/" id="navbar-title">Bristol Community Events</a></li>
+        </ul>
+        <ul>
+            <li><a href="/events">Events</a></li>
+            <li><a href="/account/settings">Account</a></li>
+        </ul>
+    </nav>
+    {% endblock %}
+    <noscript>
+        <div class="noscript-warning">
+            <p>JavaScript is disabled in your browser. Please enable JavaScript for the best experience on this site.</p>
+        </div>
+    </noscript>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        <ul class=flashes>
+        {% for category, message in messages %}
+        <li class="{{ category }}">{{ message }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+    {% endwith %}
+
+    {% block header %}
+    
+    {% endblock %}
+
+    {% block content %}
+
+    {% endblock %}
+
+    {% block footer %}
+    <br>
+    <footer>
+        <p>© <span id="current-year"></span> Bristol Community Events</p>
+        <script>
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        </script>
+        <a href="/about">About</a>
+        <a href="/terms">Terms</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/contact">Contact</a>
+    </footer>
+    {% endblock %}
+</body>
+</html>

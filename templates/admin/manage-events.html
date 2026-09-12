@@ -1,0 +1,76 @@
+{% extends "/base.html" %}
+{% block title %}
+Manage events - Bristol Community Events
+{% endblock %}
+{% block content %}
+<section class="container-fluid">
+<a href="/admin/settings">Go back</a>
+<br>
+<a href="/admin/all_events">View all events</a>
+<br>
+<a href="/admin/all_event_types">View all event types</a>
+<br>
+<a href="/admin/all_venues">View all venues</a>
+<br>
+<h2>Add event</h2>
+<form action="/admin/add_event" method="post">
+    <label for="event-name">Event name:</label>
+    <input type="text" name="event_name" id="event-name">
+    <label for="event-description">Event description:</label>
+    <textarea name="event_description" id="event-description" placeholder="Event description"></textarea>
+    <label for="event-type">Event type:</label>
+    <select name="event_type" id="event-type">
+        {% for type in event_types %}
+            <option value="{{ type[0] }}">{{ type[0] }}</option>
+        {% endfor %}
+    </select>
+    <label for="base-price">Base price:</label>
+    <input type="number" name="base_price" id="base-price">
+    <label for="event-conditions">Event conditions:</label>
+    <textarea name="event_conditions" id="event-conditions" placeholder="Event conditions"></textarea>
+    <label for="event-venue">Event venue:</label>
+    <select name="event_venue" id="event-venue">
+        {% for venue in venues %}
+            <option value="{{ venue[0] }}">{{ venue[0] }}</option>
+        {% endfor %}
+    </select>
+    <label for="event-date">Event date:</label>
+    <input type="date" name="event_date" id="event-date">
+    <label for="event-time">Event time:</label>
+    <input type="time" name="event_time" id="event-time">
+    <input type="submit" value="Add Event">
+</form>
+<h2>Edit event</h2>
+<form action="/admin/edit_event" method="post">
+    <label for="edit-event-id">Event ID of the event to edit:</label>
+    <input type="number" name="event_id" id="edit-event-id">
+    <label for="edit-event-name">Event name:</label>
+    <input type="text" name="event_name" id="edit-event-name">
+    <label for="edit-event-description">Event description:</label>
+    <textarea name="event_description" id="edit-event-description"></textarea>
+    <label for="edit-event-type">Event type:</label>
+    <input type="text" name="event_type" id="edit-event-type">
+    <label for="edit-event-base-price">Base price:</label>
+    <input type="number" name="base_price" id="edit-event-base-price">
+    <label for="edit-event-conditions">Event conditions:</label>
+    <textarea name="event_conditions" id="edit-event-conditions"></textarea>
+    <label for="edit-event-venue">Venue:</label>
+    <select name="event_venue" id="edit-event-venue">
+        {% for venue in venues %}
+            <option value="{{ venue[0] }}">{{ venue[0] }}</option>
+        {% endfor %}
+    </select>
+    <label for="edit-event-date">Event date:</label>
+    <input type="date" name="event_date" id="edit-event-date">
+    <label for="edit-event-time">Event time:</label>
+    <input type="time" name="event_time" id="edit-event-time">
+    <input type="submit" value="Update Event">
+</form>
+<h2>Delete event</h2>
+<form action="/admin/delete_event" method="post">
+    <label for="delete-event-id">Event ID:</label>
+    <input type="text" name="event_id" id="delete-event-id">
+    <input type="submit" value="Delete Event">
+</form>
+</section>
+{% endblock %}

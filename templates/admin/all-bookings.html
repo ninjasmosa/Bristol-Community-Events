@@ -1,0 +1,55 @@
+{%extends "base.html" %}
+
+{% block title %}
+    All bookings - Bristol Community Events
+{% endblock %}
+
+{% block content %}
+<section class="container-fluid">
+    <h1>All Bookings</h1>
+    <details class="container-fluid" id="filter-bookings">
+    <summary>Filters</summary>
+    <form method="GET" action="{{ url_for('admin_all_bookings') }}" class="form-card">
+        <label for="customer">Customer:</label>
+        <select id="customer" name="customer">
+            <option value="">--Select a customer--</option>
+            {% for c in customers %}
+            <option value="{{ c[0] }}">{{ c[0] }}</option>
+            {% endfor %}
+        </select>
+        <label for="event">Event:</label>
+        <select id="event" name="event">
+            <option value="">--Select an event--</option>
+            {% for e in events %}
+            <option value="{{ e[1] }}">{{ e[0] }} | {{ e[1] }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Apply Filters">
+    </form>
+</details>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Booking ID</th>
+                <th>User Email</th>
+                <th>Event Name</th>
+                <th>Tickets</th>
+                <th>Price Paid(£)</th>
+                <th>Date and Time of Booking</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for booking in bookings %}
+            <tr>
+                <td>{{ booking[0] }}</td>
+                <td>{{ booking[1] }}</td>
+                <td><a href="/event/{{ booking[2] }}">{{ booking[2]}} | {{ booking[3] }}</a></td>
+                <td>{{ booking[4] }}</td>
+                <td>{{ booking[5] }}</td>
+                <td>{{ booking[6] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+{% endblock %}

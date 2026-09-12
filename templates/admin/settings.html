@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+    {% block title %} Admin Settings - Bristol Community Events{% endblock %}
+{% block header %}
+    <header>
+        <h1>Admin Settings</h1>
+        <a href="/">Go home</a>
+    </header>
+{% endblock %}
+{% block content %}
+    <section class="container">
+        <h2>Personal Information</h2>
+        <form action="/admin/update-name" method="post">
+            <label for="fname">First name:</label>
+            <input type="text" name="fname" id="fname" value="{{admin[0]}}">
+            <label for="lname">Last name:</label>
+            <input type="text" name="lname" id="lname" value="{{admin[1]}}">
+            <input type="submit" value="Update Name">
+        </form>
+        <form action="/admin/update-email" method="post">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" value="{{admin[2]}}">
+            <input type="submit" value="Update Email">
+        </form>
+        <form action="/admin/update-password" method="post">
+            <label for="current-password">Current password:</label>
+            <input type="password" name="current_password" id="current-password">
+            <label for="new-password">New password:</label>
+            <input type="password" name="new_password" id="new-password">
+            <input type="submit" value="Update Password">
+        </form>
+        <br>
+        <div class="grid">
+            <a href="/admin/manage-events">Manage events</a>
+            <a href="/admin/manage-users">Manage users</a>
+            <a href="/admin/manage-bookings">Manage bookings</a>
+        </div>
+        <br>
+            <button type="button" onclick="location.href='/admin/logout'">Log out</button>
+    </section>
+{% endblock %}

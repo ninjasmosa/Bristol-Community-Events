@@ -1,0 +1,18 @@
+{% extends '/base.html' %}
+{% block title %}
+Manage bookings - Bristol Community Events
+{% endblock %}
+{% block content %}
+<section class="container-fluid">
+<a href="/admin/settings">Go back</a>
+<br>
+<a href="/admin/all_bookings">View all bookings</a>
+<br>
+<h2>Delete booking</h2>
+<form action="/admin/delete_booking" method="post">
+    <label for="delete-booking-id">Booking ID:</label>
+    <input type="number" name="booking_id" id="delete-booking-id">
+    <input type="submit" value="Delete Booking">
+</form>
+</section>
+{% endblock %}

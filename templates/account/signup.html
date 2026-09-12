@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}
+Sign up - Bristol Community Events
+{% endblock %}
+{% block header %}
+<header>
+       <h1>Sign Up</h1>
+   </header>
+{% endblock %}
+{% block content %}
+    <form action="/account/user-signup" method="post" class="container">
+        <label for="fname">First name:</label>
+        <input type="text" name="fname" id="fname" required>
+        <label for="lname">Last name:</label>
+        <input type="text" name="lname" id="lname" required>
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required>
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" minlength="8" required>
+        <label for="usertype">Type of user:</label>
+        <select name="usertype" id="usertype">
+            <option value="Standard" selected>Standard</option>
+            <option value="Student">Student</option>
+        </select>
+        <input type="checkbox" id="terms-consent" name="terms-consent" required>
+        <label for="terms-consent">I agree to the <a href="../terms">Terms and Conditions</a> and <a href="../privacy">Privacy Statement</a>.</label>
+        <br><br>
+        <input type="submit" value="Sign up">
+        <a href="login.html">Already have an account? Log in</a>
+    </form>
+{% endblock %}

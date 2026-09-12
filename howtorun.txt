@@ -1,0 +1,16 @@
+1. You need Python to run the app. You should also install Python packages mysql-connector-python, flask, passlib
+2. Install mysql and have the database setup, use SQL file provided if needed. Add a mysql user with the login details in the get_connection() function or change these details with your own.
+3. Run the app.py file
+
+
+You can use the following logins to login as either a regular user or admin
+
+--- Users ---
+JamesJ@mail.email | JamesJames5
+JoeSmith@email.com | JoetheSmith456
+RJones@email.com | PassWord!55
+JessicaA@inbox.email | SuperPassw0rd
+
+--- Admins ---
+admintest1@email.com | AdminPass567
+AJacobs95@mail.net | SuperPassword5

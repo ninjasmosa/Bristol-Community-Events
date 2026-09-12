@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title %}Manage Users - Bristol Community Events{% endblock %}
+{% block content %}
+<section class="container-fluid">
+<a href="/admin/settings">Go back</a>
+<br>
+<a href="/admin/all_users">View all users</a>
+<br><br>
+<h2>Add Customers</h2>
+<form action="/admin/add_user" method="post">
+    <label for="fname">First name:</label>
+    <input type="text" name="fname" id="fname" required>
+    <label for="lname">Last name:</label>
+    <input type="text" name="lname" id="lname" required>
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email" required>
+    <label for="password">Password (please notify the user to change their password)</label>
+    <input type="password" name="password" id="password" minlength="8" required>
+    <label for="type">Standard or Student customer</label>
+    <select name="type" id="type" required>
+        <option value="Standard">Standard</option>
+        <option value="Student">Student</option>
+    </select>
+    <input type="submit" value="Add User">
+</form>
+<h2>Edit Customers</h2>
+<form action="/admin/edit_user" method="post">
+    <label for="edit-email">Email of the user you want to edit:</label>
+    <input type="email" name="email" id="edit-email" required>
+    <label for="edit-fname">First name:</label>
+    <input type="text" name="fname" id="edit-fname" required>
+    <label for="edit-lname">Last name:</label>
+    <input type="text" name="lname" id="edit-lname" required>
+    <label for="password">Password (please notify the user to change their password)</label>
+    <input type="password" name="password" id="password" minlength="8" required>
+    <label for="edit-type">Standard or Student customer:</label>
+    <select name="type" id="edit-type" required>
+        <option value="Standard">Standard</option>
+        <option value="Student">Student</option>
+    </select>
+    <input type="submit" value="Update User">
+</form>
+<h2>Delete Customers</h2>
+<form action="/admin/delete_user" method="post">
+    <label for="delete-email">Email:</label>
+    <input type="email" name="email" id="delete-email" required>
+    <input type="submit" value="Delete User">
+</form>
+</section>
+{% endblock %}

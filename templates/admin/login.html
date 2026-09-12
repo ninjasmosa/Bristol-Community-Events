@@ -1,0 +1,20 @@
+{% extends "/base.html" %}
+{% block title %}
+Admin Login - Bristol Community Events
+{% endblock %}
+{% block header %}
+<header>
+       <h1>Login</h1>
+   </header>
+{% endblock %}
+{% block content %}
+    <br>
+    <form action="/admin/admin-login" method="post" class="container">
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required>
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" minlength="8" required>
+        <br><br>
+        <input type="submit" value="Login">
+    </form>
+{% endblock %}

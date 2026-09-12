@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+    {% block title %}
+        About - Bristol Community Events
+    {% endblock %}
+    {% block header %}
+    <header>
+        <h1>About us</h1>
+    </header>
+    {% endblock %}
+    {% block content %}
+    <main class="container longtext">
+        <img src="{{url_for('static', filename='images/Clifton_Suspension_Bridge-9350.jpg')}}" alt="Clifton Suspension Bridge" class="about-image">
+        <br>
+        <p>We are a community-driven organization dedicated to promoting and supporting local events in Bristol. Our mission is to connect residents with activities that enrich their lives and foster a sense of community.</p>
+        <p>Founded in 2020, we have been working tirelessly to create a platform where event organizers can share their events and where community members can discover new and exciting opportunities to engage with their city.</p>
+        <p>Whether you're looking for family-friendly activities, cultural events, or social gatherings, Bristol Community Events is here to help you find it all in one convenient place.</p>
+        <p>Join us in celebrating the vibrant community of Bristol!</p>
+    </main>
+    <hr>
+    <section class="container-fluid">
+        <h2>Our venues</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Venue name</th>
+                    <th>Capacity</th>
+                    <th>Events we host there</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Ashton gate stadium</td>
+                    <td>150</td>
+                    <td>Musical, Sports, Exhibitions</td>
+                </tr>
+                <tr>
+                    <td>Arnolfini</td>
+                    <td>100</td>
+                    <td>Exhibition, Workshops</td>
+                </tr>
+                <tr>
+                    <td>The Bristol Hippodrome</td>
+                    <td>120</td>
+                    <td>Theatre, Musical</td>
+                </tr>
+                <tr>
+                    <td>Bristol Old Vic</td>
+                    <td>110</td>
+                    <td>Theatre</td>
+                </tr>
+                <tr>
+                    <td>Bristol Central Library</td>
+                    <td>50</td>
+                    <td>Library Exhibitions</td>
+                </tr>
+                <tr>
+                    <td>Royal West of England Academy</td>
+                    <td>100</td>
+                    <td>Exhibitions</td>
+                </tr>
+                <tr>
+                    <td>Creative Space A</td>
+                    <td>30</td>
+                    <td>Workshops</td>
+                </tr>
+                <tr>
+                    <td>Creative Space B</td>
+                    <td>50</td>
+                    <td>Workshops, Courses</td>
+                </tr>
+                <tr>
+                    <td>UWE Exhibition Centre</td>
+                    <td>300</td>
+                    <td>Wedding, Workshops, Conference, Exhibitions</td>
+                </tr>
+                <tr>
+                    <td>Community Centre A</td>
+                    <td>60</td>
+                    <td>For private events such as birthday parties or religious events</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <div>Image copyright: <a href="https://commons.wikimedia.org/wiki/File:Clifton_Suspension_Bridge-9350.jpg">Gothick</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>, via Wikimedia Commons</div>
+    </section>
+    {% endblock %}

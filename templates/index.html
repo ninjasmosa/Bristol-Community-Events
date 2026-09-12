@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+    {% block title %}
+        Home - Bristol Community Events
+    {% endblock %}
+    {% block header %}
+    <header>
+        <h1>Welcome to Bristol Community Events</h1>
+        <p>Your hub for all local events in Bristol</p>
+    </header>
+    {% endblock %}
+    {% block content %}
+    <main class="container">
+        <h2>About this site</h2>
+        <p>This website was created to help people discover and participate in community events in Bristol. By creating an account, you can find and participate in a large range of events hosted by people like you.</p>
+        <a href="events">See all events</a>
+        <br><br>
+        <div class="grid">
+            <article>
+                <h3>Join our community</h3>
+                <p>Create an account to register for events and manage your bookings.</p>
+                <a href="account/signup">Sign Up</a>
+            </article>
+            <article>
+                <h3>Host an event</h3>
+                <p>Are you organizing an event? Get in touch with us to reach a wider audience.</p>
+                <a href="contact">Contact us</a>
+            </article>
+        </div>
+    </main>
+    {% endblock %}

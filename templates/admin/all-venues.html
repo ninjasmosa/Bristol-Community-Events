@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    All venues - Bristol Community Events
+{% endblock %}
+
+{% block content %}
+<section class="container-fluid">
+    <h1>All Venues</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Capacity</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for venue in venues %}
+            <tr>
+                <td>{{ venue[0] }}</td>
+                <td>{{ venue[1] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+{% endblock %}

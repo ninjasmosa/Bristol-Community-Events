@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+    {% block title %}
+    Events - Bristol Community Events
+    {% endblock %}
+    {% block header %}
+    <header class="container-fluid">
+        <h1>Upcoming Events in Bristol</h1>
+    </header>
+    {% endblock %}
+    {% block content %}
+    <details class="container-fluid" id="filter-events">
+        <summary>Filters and Search</summary>
+        <form method="GET" action="{{ url_for('events') }}" class="form-card">
+            <!-- <input type="search" id="search-events" name="search-events" placeholder="Search for an event"> -->
+            <label for="after-date">After Date:</label>
+            <input type="date" id="after-date" name="after-date">
+            <label for="max-price">Max Price:</label>
+            <input type="number" id="max-price" name="max-price" placeholder="Enter max price" min="0" step="0.01">
+            <label for="venue">Venue:</label>
+            <select id="venue" name="venue">
+                <option value="">--Select a venue--</option>
+                {% for v in venues %}
+                <option value="{{ v[0] }}">{{ v[0] }}</option>
+                {% endfor %}
+            </select>
+            <label for="type">Event Type:</label>
+            <select id="type" name="type">
+                <option value="">--Select a type--</option>
+                {% for t in types %}
+                <option value="{{ t[0] }}">{{ t[0] }}</option>
+                {% endfor %}
+            </select>
+            <input type="submit" value="Apply Filters">
+        </form>
+    </details>
+    <section class="events-list container-fluid">
+        <h2>Events</h2>
+        <table class="responsive-table">
+        <thead>
+          <tr>
+            <th>Event</th>
+            <th>Date</th>
+            <th>Type</th>
+            <th>Venue</th>
+            <th>Price</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for e in events %}
+          <tr>
+            <td>{{ e[1] }}</td>
+            <td>{{ e[6] }}</td>
+            <td>{{ e[3] }}</td>
+            <td>{{ e[5] }}</td>
+            <td>{{ e[4] }}</td>
+            <td><a class="btn-primary" href="{{ url_for('event_details', event_id=e[0]) }}">View details</a></td>
+          </tr>
+          {% endfor %}
+          {% if events|length == 0 %}
+          <tr><td colspan="6">No events match your filters.</td></tr>
+          {% endif %}
+        </tbody>
+      </table>
+    </section>
+    {% endblock %}

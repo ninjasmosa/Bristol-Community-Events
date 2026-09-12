@@ -1,0 +1,21 @@
+{% extends "/base.html" %}
+{% block title %}
+Login - Bristol Community Events
+{% endblock %}
+{% block header %}
+<header>
+       <h1>Login</h1>
+   </header>
+{% endblock %}
+{% block content %}
+    <form action="/account/user-login" method="post" class="container">
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required>
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" minlength="8" required>
+        <a href="resetpassword.html" style="font-size:small">Forgot password?</a>
+        <br><br>
+        <input type="submit" value="Login">
+        <a href="signup.html">Don't have an account? Sign up</a>
+    </form>
+{% endblock %}
